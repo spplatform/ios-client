@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Aex-zb-UWo">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -384,16 +384,33 @@
             </objects>
             <point key="canvasLocation" x="773.91304347826087" y="20.758928571428569"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="dQi-fa-JCO">
+            <objects>
+                <navigationController id="eQa-Rx-Ypn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="rMS-eV-Zjt"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3Sa-9R-TO9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="TwX-s0-CZ6" kind="relationship" relationship="rootViewController" id="tp6-cZ-Qq5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VbL-X9-3Cz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1526" y="781"/>
+        </scene>
         <!--Item 2-->
         <scene sceneID="NBl-fb-ehh">
             <objects>
-                <viewController id="TwX-s0-CZ6" sceneMemberID="viewController">
+                <viewController id="TwX-s0-CZ6" customClass="RoadMapViewController" customModule="ios_client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z5m-db-esC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Карта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fb8-qd-TqB">
-                                <rect key="frame" x="184" y="72" width="46.5" height="21"/>
+                                <rect key="frame" x="184" y="116" width="46.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -407,10 +424,11 @@
                         <viewLayoutGuide key="safeArea" id="hBz-B7-fjK"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="lpV-2I-aiR"/>
+                    <navigationItem key="navigationItem" id="7sy-zl-uIX"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YRn-Th-V7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2530" y="354"/>
+            <point key="canvasLocation" x="2287" y="781"/>
         </scene>
         <!--Item-->
         <scene sceneID="g8G-HI-Snc">
@@ -479,8 +497,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="fCh-Dz-BYX" kind="relationship" relationship="viewControllers" id="HAx-cn-Vfh"/>
-                        <segue destination="TwX-s0-CZ6" kind="relationship" relationship="viewControllers" id="YX8-Vx-YQl"/>
                         <segue destination="vy1-RE-gZC" kind="relationship" relationship="viewControllers" id="m03-v2-qwP"/>
+                        <segue destination="eQa-Rx-Ypn" kind="relationship" relationship="viewControllers" id="YDR-kc-Rcs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JaM-7U-RGs" userLabel="First Responder" sceneMemberID="firstResponder"/>

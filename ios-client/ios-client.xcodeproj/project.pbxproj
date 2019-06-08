@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		5F8D22D422ABDB3B00B40CFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8D22D222ABDB3B00B40CFB /* LaunchScreen.storyboard */; };
 		5F8D22DF22ABDB3B00B40CFB /* ios_clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8D22DE22ABDB3B00B40CFB /* ios_clientTests.swift */; };
 		5F8D22EA22ABDB3B00B40CFB /* ios_clientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8D22E922ABDB3B00B40CFB /* ios_clientUITests.swift */; };
+		5F8D22FA22AC279C00B40CFB /* RoadMapViewControllerr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8D22F922AC279C00B40CFB /* RoadMapViewControllerr.swift */; };
 		D998762E4DACBDA5446A1539 /* Pods_ios_client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BEECE5DCFE878D8F688CCB8 /* Pods_ios_client.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		5F8D22E522ABDB3B00B40CFB /* ios-clientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-clientUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8D22E922ABDB3B00B40CFB /* ios_clientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_clientUITests.swift; sourceTree = "<group>"; };
 		5F8D22EB22ABDB3B00B40CFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F8D22F922AC279C00B40CFB /* RoadMapViewControllerr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoadMapViewControllerr.swift; sourceTree = "<group>"; };
 		7BEECE5DCFE878D8F688CCB8 /* Pods_ios_client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B557039060DBEC8C48832390 /* Pods-ios-client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-client.release.xcconfig"; path = "Target Support Files/Pods-ios-client/Pods-ios-client.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 		5F8D22C822ABDB3800B40CFB /* ios-client */ = {
 			isa = PBXGroup;
 			children = (
+				5F8D22F922AC279C00B40CFB /* RoadMapViewControllerr.swift */,
 				5F8D22C922ABDB3800B40CFB /* AppDelegate.swift */,
 				5F8D22CB22ABDB3800B40CFB /* ViewController.swift */,
 				5F8D22CD22ABDB3800B40CFB /* Main.storyboard */,
@@ -146,7 +149,6 @@
 				3F7773E1B00D43A35A1826B5 /* Pods-ios-client.debug.xcconfig */,
 				B557039060DBEC8C48832390 /* Pods-ios-client.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -327,6 +329,7 @@
 			files = (
 				5F8D22CC22ABDB3800B40CFB /* ViewController.swift in Sources */,
 				5F8D22CA22ABDB3800B40CFB /* AppDelegate.swift in Sources */,
+				5F8D22FA22AC279C00B40CFB /* RoadMapViewControllerr.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
