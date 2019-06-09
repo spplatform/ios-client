@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -21,15 +21,25 @@ class ViewController: UIViewController {
 
 
     @IBAction func loginTap(_ sender: Any) {
-        login(loginTextField.text ?? "", password: passwordTextField.text ?? "")
+        login(loginTextField.text, password: passwordTextField.text)
     }
 }
 
-extension ViewController {
+extension LoginViewController {
     
-    func login(_ login: String, password: String) {
+    func login(_ login: String?, password: String?) {
        
-        let url = URL(string: "http://edu-server.herokuapp.com/api/login")!
+        guard  let login = login, !login.isEmpty else {
+            showSimpleError(text: "Введите логин")
+            return
+        }
+        
+        guard  let password = password, !password.isEmpty else {
+            showSimpleError(text: "Введите пароль")
+            return
+        }
+        
+        let url = URL(string: "https://pink-starfish-10.localtunnel.me/api/login")!
         var request = URLRequest(url: url)
         request.setValue("text/plain; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
@@ -52,6 +62,14 @@ extension ViewController {
                 self?.performSegue(withIdentifier: "openMain", sender: self)
             }
         }
+    }
+    
+    func showSimpleError(text: String) {
+        let alertController = UIAlertController(title: "Ошибка ввода данных", message: text, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ок", style: .default) { (action:UIAlertAction) in
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
