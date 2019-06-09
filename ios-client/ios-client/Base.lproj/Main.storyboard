@@ -90,7 +90,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_logo_small" translatesAutoresizingMaskIntoConstraints="NO" id="KuL-3T-rrd">
-                                <rect key="frame" x="77" y="169" width="260" height="49.000000000000014"/>
+                                <rect key="frame" x="77" y="169" width="260" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="L6a-75-NII"/>
                                     <constraint firstAttribute="width" constant="260" id="vq5-ji-Rol"/>
@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Poll View Controller-->
         <scene sceneID="oCk-gr-WEd">
             <objects>
-                <viewController id="Y0L-5D-iRm" sceneMemberID="viewController">
+                <viewController id="Y0L-5D-iRm" customClass="PollViewController" customModule="ios_client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L4G-4e-H9a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -505,15 +505,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_stat_cap" translatesAutoresizingMaskIntoConstraints="NO" id="2Lu-vP-wxL">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769.00000000000023"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgU-eg-A5K">
+                                <rect key="frame" x="67" y="114" width="280" height="50"/>
+                                <color key="backgroundColor" red="0.4941176471" green="0.4549019608" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="83x-81-gt6"/>
+                                    <constraint firstAttribute="height" constant="50" id="Ul6-cR-J66"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Зал славы">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="uOn-pd-4u6" kind="show" id="0rD-kd-ZFb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Vm4-d8-EdN" firstAttribute="bottom" secondItem="2Lu-vP-wxL" secondAttribute="bottom" id="13s-mP-LQt"/>
                             <constraint firstItem="2Lu-vP-wxL" firstAttribute="top" secondItem="Vm4-d8-EdN" secondAttribute="top" id="F46-cP-7bg"/>
+                            <constraint firstItem="xgU-eg-A5K" firstAttribute="top" secondItem="Vm4-d8-EdN" secondAttribute="top" constant="70" id="Zzd-VL-xph"/>
                             <constraint firstItem="2Lu-vP-wxL" firstAttribute="leading" secondItem="Vm4-d8-EdN" secondAttribute="leading" id="ehy-pl-b5M"/>
                             <constraint firstItem="Vm4-d8-EdN" firstAttribute="trailing" secondItem="2Lu-vP-wxL" secondAttribute="trailing" id="n8N-dZ-LiE"/>
+                            <constraint firstItem="xgU-eg-A5K" firstAttribute="centerX" secondItem="Hs8-8E-JQW" secondAttribute="centerX" id="wX2-rR-t9F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vm4-d8-EdN"/>
                     </view>
@@ -522,6 +539,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhP-Cf-dr2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3180" y="354"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fg6-fZ-VTF">
+            <objects>
+                <viewController id="uOn-pd-4u6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rl4-zr-EGR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="oDO-oW-rbi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eSG-2O-MVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3934" y="358"/>
         </scene>
         <!--Профиль-->
         <scene sceneID="jJU-bZ-Z5R">

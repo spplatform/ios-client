@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var polls: [Poll?]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -22,6 +24,24 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginTap(_ sender: Any) {
         login(loginTextField.text, password: passwordTextField.text)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "openPoll" {
+            if let destinationVC = segue.destination as? PollViewController {
+                destinationVC.polls = polls
+            }
+        }
+    }
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "openPoll") {
+            
+            if let vc: PollViewController = segue.destination as? PollViewController {
+                vc.polls = polls
+            }
+            
+        }
     }
 }
 
@@ -59,11 +79,18 @@ extension LoginViewController {
             
             if let result = response.result.value {
                 let JSON = result as! NSDictionary
-                let poll = self?.parsePoll(response: JSON)
-                print(JSON)
+                let fisrt = JSON["first-poll"] as! NSDictionary
+                let fpoll = self?.parsePoll(f: fisrt)
+                let second = JSON["second-poll"] as! NSDictionary
+                let spoll = self?.parsePoll(f: second)
+                //print(JSON)
+                self?.polls = [Poll?]()
+                
+                self?.polls?.append(fpoll)
+                self?.polls?.append(spoll)
             }
             
-            if false {
+            if true {
                 self?.performSegue(withIdentifier: "openPoll", sender: self)
             } else {
                 self?.performSegue(withIdentifier: "openMain", sender: self)
@@ -71,8 +98,7 @@ extension LoginViewController {
         }
     }
     
-    func parsePoll(response: NSDictionary) -> Poll {
-        let f = response["first-poll"] as! NSDictionary
+    func parsePoll(f: NSDictionary) -> Poll {
         let fPoll = Poll()
         fPoll.id = f["id"] as? Int
         fPoll.text = f["description"] as? String
