@@ -40,49 +40,49 @@ class RoadMapViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let scrollView = UIScrollView()
-        
-        view.addSubview(scrollView)
-        
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-
-        
-//        let degrees: CGFloat  = 90 //the value in degrees
-//        scrollView.transform = CGAffineTransform(rotationAngle: degrees * CGFloat(Double.pi)/180)
-        
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
-        myPathLayout = TGLocusPathLayout()
-        myPathLayout.backgroundColor = .white
-//        myPathLayout.tg_height.equal(scrollView)
-//        myPathLayout.tg_width.equal(scrollView)
-        //
-        
-        myPathLayout.tg_height.equal(.wrap).min(scrollView).and().tg_width.equal(.wrap).min(scrollView)
-        //myPathLayout.tg_padding = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        scrollView.addSubview(myPathLayout)
-        
-        myPathLayout.tg_coordinateSetting.isReverse = !myPathLayout.tg_coordinateSetting.isReverse
-        
-        changeFunc(index: .sin)
-        
-        handleAdd()
-        handleAdd()
-//        handleAdd()
-//        handleAdd()
+//        let scrollView = UIScrollView()
+//        
+//        view.addSubview(scrollView)
+//        
+//        scrollView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        
+////        let degrees: CGFloat  = 90 //the value in degrees
+////        scrollView.transform = CGAffineTransform(rotationAngle: degrees * CGFloat(Double.pi)/180)
+//        
+//        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+//        scrollView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+//        scrollView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+//        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+//        
+//        myPathLayout = TGLocusPathLayout()
+//        myPathLayout.backgroundColor = .white
+////        myPathLayout.tg_height.equal(scrollView)
+////        myPathLayout.tg_width.equal(scrollView)
+//        //
+//        
+//        myPathLayout.tg_height.equal(.wrap).min(scrollView).and().tg_width.equal(.wrap).min(scrollView)
+//        //myPathLayout.tg_padding = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+//        scrollView.addSubview(myPathLayout)
+//        
+//        myPathLayout.tg_coordinateSetting.isReverse = !myPathLayout.tg_coordinateSetting.isReverse
+//        
+//        changeFunc(index: .sin)
 //        
 //        handleAdd()
 //        handleAdd()
-//        handleAdd()
-//        handleAdd()
-//        
-//        handleAdd()
-//        handleAdd()
-//        handleAdd()
-//        handleAdd()
+////        handleAdd()
+////        handleAdd()
+////        
+////        handleAdd()
+////        handleAdd()
+////        handleAdd()
+////        handleAdd()
+////        
+////        handleAdd()
+////        handleAdd()
+////        handleAdd()
+////        handleAdd()
     }
 
     override func viewDidLoad() {
