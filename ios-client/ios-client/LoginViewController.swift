@@ -44,8 +44,8 @@ extension LoginViewController {
         request.setValue("text/plain; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         let parameters: [String: Any] = [
-            "login": "13",
-            "password": "Jack & Jill"
+            "login": login,
+            "password": password
         ]
         let jsonData = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
         request.httpBody = jsonData
@@ -55,7 +55,14 @@ extension LoginViewController {
 //                print("Ошибка при запросе данных \(String(describing: response.result.error))")
 //                return
 //            }
-            print(response.value)
+            //print(response.value)
+            
+            if let result = response.result.value {
+                let JSON = result as! NSDictionary
+                self?.parsePoll(response: JSON)
+                //print(JSON)
+            }
+            
             if false {
                 self?.performSegue(withIdentifier: "openPoll", sender: self)
             } else {
@@ -64,6 +71,15 @@ extension LoginViewController {
         }
     }
     
+    func parsePoll(response: NSDictionary) {
+        let f = response["first-poll"] as! NSDictionary
+        let fPoll = Poll()
+        fPoll.id = f["id"] as? Int
+        fPoll.text = f["description"] as? String
+        let q = f["description"] as? NSDictionary
+    }
+    
+    /// User enter errors
     func showSimpleError(text: String) {
         let alertController = UIAlertController(title: "Ошибка ввода данных", message: text, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ок", style: .default) { (action:UIAlertAction) in

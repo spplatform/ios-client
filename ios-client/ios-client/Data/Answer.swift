@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+class Answer {
+    var text: String?
+    var id: Int?
+}

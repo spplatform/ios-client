@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class Poll {
+    
+    var text: String?
+    var id: Int?
+    var questions: [Question]?
+}
