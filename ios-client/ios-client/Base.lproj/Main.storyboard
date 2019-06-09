@@ -543,13 +543,27 @@
         <!--View Controller-->
         <scene sceneID="fg6-fZ-VTF">
             <objects>
-                <viewController id="uOn-pd-4u6" sceneMemberID="viewController">
+                <viewController id="uOn-pd-4u6" customClass="ViewController" customModule="ios_client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rl4-zr-EGR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4y-PJ-MnQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </arscnView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oDO-oW-rbi" firstAttribute="trailing" secondItem="j4y-PJ-MnQ" secondAttribute="trailing" id="AKF-nP-jCs"/>
+                            <constraint firstItem="j4y-PJ-MnQ" firstAttribute="top" secondItem="oDO-oW-rbi" secondAttribute="top" id="NVc-AK-w2N"/>
+                            <constraint firstItem="j4y-PJ-MnQ" firstAttribute="leading" secondItem="oDO-oW-rbi" secondAttribute="leading" id="c2O-uF-OlG"/>
+                            <constraint firstItem="oDO-oW-rbi" firstAttribute="bottom" secondItem="j4y-PJ-MnQ" secondAttribute="bottom" id="yTE-qE-4we"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oDO-oW-rbi"/>
                     </view>
+                    <connections>
+                        <outlet property="sceneView" destination="j4y-PJ-MnQ" id="hm2-um-IHx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSG-2O-MVZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
