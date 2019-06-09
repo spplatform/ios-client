@@ -59,8 +59,8 @@ extension LoginViewController {
             
             if let result = response.result.value {
                 let JSON = result as! NSDictionary
-                self?.parsePoll(response: JSON)
-                //print(JSON)
+                let poll = self?.parsePoll(response: JSON)
+                print(JSON)
             }
             
             if false {
@@ -71,12 +71,46 @@ extension LoginViewController {
         }
     }
     
-    func parsePoll(response: NSDictionary) {
+    func parsePoll(response: NSDictionary) -> Poll {
         let f = response["first-poll"] as! NSDictionary
         let fPoll = Poll()
         fPoll.id = f["id"] as? Int
         fPoll.text = f["description"] as? String
-        let q = f["description"] as? NSDictionary
+        let qs = f["questions"] as? NSArray
+        fPoll.questions = parseQuestion(rqs: qs)
+        return fPoll
+    }
+    
+    func parseQuestion(rqs: NSArray?) -> [Question]? {
+        var qs = [Question]()
+        if let rqs = rqs {
+            for rq in rqs {
+                if let rqd = rq as? NSDictionary{
+                    let q = Question()
+                    q.id = rqd["id"] as? Int
+                    q.text = rqd["description"] as? String
+                    let ans = rqd["answers"] as? NSArray
+                    q.answers = parseAns(rans: ans)
+                    qs.append(q)
+                }
+            }
+        }
+        return qs
+    }
+    
+    func parseAns(rans: NSArray?) -> [Answer]? {
+        var ans = [Answer]()
+        if let rans = rans {
+            for ran in rans {
+                if let rand = ran as? NSDictionary{
+                    let an = Answer()
+                    an.id = rand["id"] as? Int
+                    an.text = rand["description"] as? String
+                    ans.append(an)
+                }
+            }
+        }
+        return ans
     }
     
     /// User enter errors
