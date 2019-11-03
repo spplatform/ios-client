@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+class RoadMapUsless {
+    var text: String?
+    var id: Int?
+}
